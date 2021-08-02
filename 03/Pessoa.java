@@ -62,6 +62,6 @@ public class Pessoa {
     protected void ajustaDataDeNascimento(int dia, int mes, int ano) {
         setDia(dia);
         setMes(mes);
-        setAno(ano);;
+        setAno(ano);
     }
 }
