@@ -46,8 +46,19 @@ public class Agenda {
     }
     public void imprimePessoa(int index) {
         try {
-            System.out.println(pessoa_vector.get(index));
-        } catch ( Throwable IndexOutOfBoundsException ) {
+            Pessoa person = pessoa_vector.get(index);
+            System.out.print("Nome: ");
+            System.out.println(person.informaNome());
+            System.out.print("Data de nascimento: ");
+            System.out.print(person.informaDiaDeNascimento());
+            System.out.print("/");
+            System.out.print(person.informaMesDeNascimento());
+            System.out.print("/");
+            System.out.println(person.informaAnoDeNascimento());
+            System.out.print("Idade: ");
+            System.out.println(person.informaIdade());
+        }
+        catch ( Throwable IndexOutOfBoundsException ) {
             System.out.println("Index Invalido!");
         }
     }
