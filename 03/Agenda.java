@@ -11,18 +11,19 @@ import java.util.ArrayList;
 public class Agenda {
     ArrayList<Pessoa> pessoa_vector = new ArrayList<Pessoa>(10);
     public void armazenaPessoa(Pessoa pessoa) {
-        pessoa_vector.add(pessoa);
+        this.pessoa_vector.add(pessoa);
     }
     public void removePessoa(String nome) {
-        for (Pessoa person : pessoa_vector) {
+        for (Pessoa person : this.pessoa_vector) {
             if (person.informaNome().equals(nome)) {
-                pessoa_vector.remove(person);
+                this.pessoa_vector.remove(person);
+                break;
             }
         }
     }
     public int buscaPessoa(String nome) {
         int i = 0;
-        for (Pessoa person : pessoa_vector) {
+        for (Pessoa person : this.pessoa_vector) {
             if (person.informaNome().equals(nome)) {
                 return i;
             }
@@ -31,7 +32,7 @@ public class Agenda {
         return -1;
     }
     public void imprimeAgenda() {
-        for (Pessoa person : pessoa_vector) {
+        for (Pessoa person : this.pessoa_vector) {
             System.out.print("Nome: ");
             System.out.println(person.informaNome());
             System.out.print("Data de nascimento: ");
@@ -46,7 +47,7 @@ public class Agenda {
     }
     public void imprimePessoa(int index) {
         try {
-            Pessoa person = pessoa_vector.get(index);
+            Pessoa person = this.pessoa_vector.get(index);
             System.out.print("Nome: ");
             System.out.println(person.informaNome());
             System.out.print("Data de nascimento: ");

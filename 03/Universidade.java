@@ -21,25 +21,25 @@ public class Universidade {
         this.nome = nome;
     }
     protected void registrarDepartamento(Departamento dep) {
-        if (dep_vector.contains(dep) == false) {
+        if ((this.dep_vector.contains(dep) == false) && (this.dep_vector.size() < 10)){
             dep.registrarUniversidade(this);
-            dep_vector.add(dep);
+            this.dep_vector.add(dep);
         }
         else {
             System.out.println("Departamento ja registrado!");
         }
     }
     protected void desvincularDepartamento(Departamento dep) {
-        if (dep_vector.contains(dep)) {
+        if (this.dep_vector.contains(dep)) {
             dep.desvincularUniversidade(this);
-            dep_vector.remove(dep);
+            this.dep_vector.remove(dep);
         }
         else {
             System.out.println("Departamento nao registrado");
         }
     }
     public void mostrarDepartamentos() {
-        for (Departamento dep : dep_vector) {
+        for (Departamento dep : this.dep_vector) {
             System.out.println(dep.getNome());
         }
     }

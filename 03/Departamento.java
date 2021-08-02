@@ -12,8 +12,10 @@ public class Departamento {
     private String nome;
     private Universidade uni;
     ArrayList<Pessoa> pessoa_vectorr = new ArrayList<Pessoa>();
-    public Departamento(String nome) {
-        setNome(nome); 
+    public Departamento(String nome, Pessoa p1, Pessoa p2) {
+        setNome(nome);
+        registrarPessoa(p1);
+        registrarPessoa(p2);
     }
     public String getNome() {
         return this.nome;
@@ -44,17 +46,23 @@ public class Departamento {
         }
     }
     public void registrarPessoa(Pessoa person) {
-        pessoa_vectorr.add(person);
+        this.pessoa_vectorr.add(person);
     }
     public void desvincularPessoa(String nome) {
-        for (Pessoa person : pessoa_vectorr) {
-            if (person.informaNome().equals(nome)) {
-                pessoa_vectorr.remove(person);
+        if (this.pessoa_vectorr.size() > 2) {
+            for (Pessoa person : this.pessoa_vectorr) {
+                if (person.informaNome().equals(nome)) {
+                    this.pessoa_vectorr.remove(person);
+                    break;
+                }
             }
+        }
+        else {
+            System.out.println("Cada departamento deve conter no minimo 2 pessoas. Desvinculacao invalida");
         }
     }
     public void mostrarPessoas() {
-        for (Pessoa person : pessoa_vectorr) {
+        for (Pessoa person : this.pessoa_vectorr) {
             System.out.println(person.informaNome());
         }
     }
