@@ -1,12 +1,12 @@
 
 public class Animal {
     protected String nome;
-    protected float comprimento;
+    protected double comprimento;
     protected int numero_de_patas;
     protected String cor;
     protected String ambiente;
-    protected float velocidade;
-    public Animal(String nome, float comprimento, int numero_de_patas, String cor, String ambiente, float velocidade) {
+    protected double velocidade;
+    public Animal(String nome, double comprimento, int numero_de_patas, String cor, String ambiente, double velocidade) {
         setNome(nome);
         setComprimento(comprimento);
         setNDP(numero_de_patas);
@@ -18,7 +18,7 @@ public class Animal {
         this.nome = nome;
 
     }
-    protected void setComprimento(float comprimento) {
+    protected void setComprimento(double comprimento) {
         this.comprimento = comprimento;
     }    
     protected void setNDP(int ndp) {
@@ -31,13 +31,13 @@ public class Animal {
         this.ambiente = ambiente;
         
     }  
-    protected void setVelocidade(float velocidade) {
+    protected void setVelocidade(double velocidade) {
         this.velocidade = velocidade;
     }
     public String getNome() {
         return this.nome;
     }
-    public float getComprimento() {
+    public double getComprimento() {
         return this.comprimento;
     }    
     protected int getNDP() {
@@ -50,8 +50,12 @@ public class Animal {
         return this.ambiente;
         
     }  
-    public float getVelocidade() {
+    public double getVelocidade() {
         return this.velocidade;
+    }
+    public String toString() {
+        return "--------------------" + "\nAnimal: " + getNome() + "\nComprimento: " + "\nPatas: " + getNDP() + "\nCor: " + getCor() + "\nAmbiente: " + getAmbiente() + "\nVelocidade: " + getVelocidade() + "\n--------------------";
+
     }
 }
 
